@@ -1,8 +1,7 @@
-📋 Grader Report:
-
 ## Live Demo
 
 [SLU-stagram](https://slu-stagram.vercel.app/)
+📋 Grader Report:
 
 This section documents screenshots and code references required for assessment.
 
