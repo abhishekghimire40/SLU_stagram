@@ -51,3 +51,55 @@ Instructions:
 
 Screenshot: Browser console open showing no errors or warnings after reload.
 ![No errors warning after refresh](src/assets/refreshConsoleNoError.jpeg)
+
+----------------------------------------------------------------------------------------------------------------------------
+#Screenshot D - Profile:
+Instructions:
+1. Click on profile name of user.
+2. You will navigate to u/username.
+
+Screenshot: Profile of user
+![Profile](src/assets/profile.png)
+
+----------------------------------------------------------------------------------------------------------------------------
+
+#Component Tree and State Management
+
+The main application structure is organized as follows:
+App
+ ├─ Navbar
+ ├─ Routes
+     ├─ "/" Home
+     │     ├─ Composer
+     │     └─ Feed
+     │          └─ PostCard
+     │               ├─ CommentList
+     │               └─ CommentForm
+     └─ "/u/:handle" (Profile)
+           └─ Feed (filtered by user)
+                └─ PostCard
+
+
+App -> contains Navbar and page Routes.
+On the home page (/), App renders Composer (to add posts) and Feed, which contains multiple PostCard components.
+Each PostCard has CommentList and CommentForm for displaying and adding comments.
+The Profile page (/u/:handle) reuses Feed to show posts by a specific user.
+
+
+#Where State Lives:
+
+The main state (posts) lives in App.jsx.
+
+It is initialized from localStorage (for persistence) and updated whenever posts change.
+
+The setPosts function is passed down as props to components like Composer, Feed, PostCard, and CommentForm, allowing them to:
+
+Add new posts (Composer)
+
+Toggle likes (PostCard)
+
+Add comments (CommentForm)
+
+The Profile page filters posts by author but still relies on the same posts state.
+
+This single-source-of-truth structure keeps data consistent across all pages and components.
