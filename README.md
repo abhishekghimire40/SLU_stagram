@@ -1,8 +1,12 @@
 📋 Grader Report:
 
+## Live Demo
+
+[SLU-stagram](https://slu-stagram.vercel.app/)
+
 This section documents screenshots and code references required for assessment.
 
-#Screenshot A – Two Posts (Liked and Not Liked)
+# Screenshot A – Two Posts (Liked and Not Liked)
 
 Instructions:
 
@@ -24,9 +28,9 @@ Not liked screenshot post:
 Screenshot with no console error:
 ![No console error screenshot](src/assets/No-console-error.png)
 
-----------------------------------------------------------------------------------------------------------------------------
+---
 
-#Screenshot B – Post with a New Comment
+# Screenshot B – Post with a New Comment
 
 Instructions:
 
@@ -37,7 +41,7 @@ The comment should instantly appear below that post.
 Screenshot : A post showing a new comment added via the comment form.
 ![New Comment screenshot](src/assets/newcomment.jpeg)
 
-----------------------------------------------------------------------------------------------------------------------------
+---
 
 # Screenshot C – Console Open, No Errors
 
@@ -52,41 +56,42 @@ Instructions:
 Screenshot: Browser console open showing no errors or warnings after reload.
 ![No errors warning after refresh](src/assets/refreshConsoleNoError.jpeg)
 
-----------------------------------------------------------------------------------------------------------------------------
-#Screenshot D - Profile:
+---
+
+# Screenshot D - Profile
+
 Instructions:
+
 1. Click on profile name of user.
 2. You will navigate to u/username.
 
 Screenshot: Profile of user
 ![Profile](src/assets/profile.png)
 
-----------------------------------------------------------------------------------------------------------------------------
+---
 
-#Component Tree and State Management
+# Component Tree and State Management
 
 The main application structure is organized as follows:
 App
- ├─ Navbar
- ├─ Routes
-     ├─ "/" Home
-     │     ├─ Composer
-     │     └─ Feed
-     │          └─ PostCard
-     │               ├─ CommentList
-     │               └─ CommentForm
-     └─ "/u/:handle" (Profile)
-           └─ Feed (filtered by user)
-                └─ PostCard
-
+├─ Navbar
+├─ Routes
+├─ "/" Home
+│ ├─ Composer
+│ └─ Feed
+│ └─ PostCard
+│ ├─ CommentList
+│ └─ CommentForm
+└─ "/u/:handle" (Profile)
+└─ Feed (filtered by user)
+└─ PostCard
 
 App -> contains Navbar and page Routes.
 On the home page (/), App renders Composer (to add posts) and Feed, which contains multiple PostCard components.
 Each PostCard has CommentList and CommentForm for displaying and adding comments.
 The Profile page (/u/:handle) reuses Feed to show posts by a specific user.
 
-
-#Where State Lives:
+# Where State Lives
 
 The main state (posts) lives in App.jsx.
 
